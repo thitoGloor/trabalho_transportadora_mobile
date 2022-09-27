@@ -1,7 +1,6 @@
 import { View,Text,StyleSheet,TouchableOpacity } from "react-native";
 import{Feather} from '@expo/vector-icons'
-import { useState } from "react";
-import Situacao from "../../Situacao";
+
 
 
 export default function Menu(){

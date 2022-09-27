@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from "react";
-import { View,Text,StyleSheet,FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList } from "react-native";
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
-import Situacao from '../../Situacao';
+import Situacao from '../../components/Situacao';
 import Footer from '../../components/Footer';
+
 const entregas = [
     {
         id: 1,
@@ -71,47 +72,32 @@ const entregas = [
     },
 ]
 
-
-export default function Home(){
-    return(
+export default function Home() {
+    return (
         //para vc tirar do app.js vc tem que trazer para a home o que vc quer escrever
         // e la no app.js vc chama essa funçao
-         //esse parametro é importante p quando fazer login chamar o nome 
-        <View style = {styles.container}> 
-           
-            <Header name={"Thiago"}></Header>             
-        
-            <Menu> </Menu>
-            <FlatList sytle={styles.textEntrega} 
-                data={entregas} 
+        //esse parametro é importante p quando fazer login chamar o nome 
+        <View style={styles.container}>
+            <Header name={"Thiago"}></Header>
+            <Menu/> 
+            <FlatList sytle={styles.textEntrega}
+                data={entregas}
                 keyExtractor={(item) => String(item.id)}
-               // showsVerticalScrollIndicator={false}
-                renderItem={({item}) => <Situacao loja={item} />}
+                // showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => <Situacao loja={item} />}
             />
-            
-            
             <StatusBar style="auto" />
-            <Footer></Footer>
+            <Footer/>
         </View>
     )
-
 }
-//vou mudar esse styles depois!!!
+
 const styles = StyleSheet.create({
     container: {
-       flex: 1,
-    //   backgroundColor: 'yellow',
-    //   alignItems: 'center',
-   //   justifyContent: 'center',
+        flex: 1,        
     },
-    textEntrega:{
+    textEntrega: {
         marginStart: 14,
         marginEnd: 14,
-    },
-    // textList:{
-    //     marginStart: 14,
-    //     marginEnd: 14,
-    //     fontSize: 16,
-    // },
-    
-  });
+    },    
+});
