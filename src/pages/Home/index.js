@@ -83,7 +83,7 @@ export default function Home() {
             <FlatList sytle={styles.textEntrega}
                 data={entregas}
                 keyExtractor={(item) => String(item.id)}
-                // showsVerticalScrollIndicator={false}
+                 showsVerticalScrollIndicator={false}
                 renderItem={({ item }) => <Situacao loja={item} />}
             />
             <StatusBar style="auto" />
